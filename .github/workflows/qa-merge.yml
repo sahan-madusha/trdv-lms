@@ -1,0 +1,26 @@
+name: QA Branch Cleanup
+
+on:
+  push:
+    branches:
+      - qa
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Move build files to root
+        run: |
+          mv Client/build/* .
+          rm -rf Client
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "sahan madusha"
+          git config --global user.email "sahanmadusha001@gmail.com"
+          git add .
+          git commit -m "Move build files to root and remove Client folder"
+          git push
