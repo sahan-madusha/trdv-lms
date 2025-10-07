@@ -21,7 +21,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config --global user.name "sahan-madusha"
+          git config --global user.name "sahan madusha"
           git config --global user.email "sahanmadusha001@gmail.com"
           git add .
           git commit -m "Move build files to root and remove client folder" || echo "No changes to commit"
