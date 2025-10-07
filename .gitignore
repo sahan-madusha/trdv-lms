@@ -1,5 +1,11 @@
+# Ignore entire client and server folders in QA
+client/
+server/
+
 # Node modules
+node_modules/
 client/node_modules/
+server/node_modules/
 
 # Build folders
 client/build/
@@ -13,13 +19,13 @@ server/logs/
 client/.env
 server/.env
 
-# OS files
-.DS_Store
-Thumbs.db
-
 # QA or temporary folders
 qa/
 dev/
+
+# OS files
+.DS_Store
+Thumbs.db
 
 # IDE/editor files
 .vscode/
