@@ -14,13 +14,13 @@ jobs:
 
       - name: Move build files to root
         run: |
-          mv Client/build/* .
-          rm -rf Client
+          mv client/build/* .
+          rm -rf client
 
       - name: Commit and push changes
         run: |
           git config --global user.name "sahan madusha"
           git config --global user.email "sahanmadusha001@gmail.com"
           git add .
-          git commit -m "Move build files to root and remove Client folder"
+          git commit -m "Move build files to root and remove client folder"
           git push
