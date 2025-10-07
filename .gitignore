@@ -1,0 +1,28 @@
+# Node modules
+client/node_modules/
+
+# Build folders
+client/build/
+
+# Logs
+server/logs/
+*.log
+
+# Environment files
+.env
+client/.env
+server/.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# QA or temporary folders
+qa/
+dev/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
