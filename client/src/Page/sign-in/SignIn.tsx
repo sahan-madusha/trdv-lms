@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
-import { Input, Button, message } from "antd";
+import { Input, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 export const SignInPage = () => {
@@ -9,7 +8,7 @@ export const SignInPage = () => {
   const loginBtnRef = useRef(null);
   const [formData, setFormData] = useState({ username: "", password: "" });
   // const { signIn } = useAuthChecker();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -98,8 +97,8 @@ export const SignInPage = () => {
             }}
             disabled={
               formData.password.length < 4 ||
-              formData.password == "" ||
-              formData.username == ""
+              formData.password === "" ||
+              formData.username === ""
             }
           >
             Log in
