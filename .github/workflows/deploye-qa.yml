@@ -3,7 +3,7 @@ name: Deploy React App to cPanel
 on:
   push:
     branches:
-      - dev
+      - qa
 
 jobs:
   build-and-deploy:
@@ -22,7 +22,6 @@ jobs:
         run: |
           cd client
           npm run build
-        continue-on-error: true
 
       - name: Copy files to server via SSH
         uses: appleboy/scp-action@v0.1.7
