@@ -1,8 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Input, Button, message } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import { APPLOGO, IMAGE_URL, LOGIN_SUCCESS, SIGNIN_BG } from "../../Constant";
-import { useAuthChecker } from "../../Context";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
@@ -10,7 +8,7 @@ export const SignInPage = () => {
   const passwordRef = useRef(null);
   const loginBtnRef = useRef(null);
   const [formData, setFormData] = useState({ username: "", password: "" });
-  const { signIn } = useAuthChecker();
+  // const { signIn } = useAuthChecker();
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,7 +37,7 @@ export const SignInPage = () => {
       <div className="flex-1 flex items-center justify-center bg-white">
         <div className="w-full max-w-md p-8">
           <div className="flex justify-start mb-6">
-            <img src={`${IMAGE_URL}/${APPLOGO}`} alt="Logo" className="w-10" />
+            {/* <img src={`${IMAGE_URL}/${APPLOGO}`} alt="Logo" className="w-10" /> */}
           </div>
 
           <h2 className="text-2xl font-semibold text-start mb-2">Sign in</h2>
@@ -112,7 +110,7 @@ export const SignInPage = () => {
       <div
         className="flex-1 hidden lg:block bg-cover bg-center"
         style={{
-          backgroundImage: `url('${IMAGE_URL}/${SIGNIN_BG}')`,
+          // backgroundImage: `url('${IMAGE_URL}/${SIGNIN_BG}')`,
         }}
       ></div>
     </div>

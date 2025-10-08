@@ -32,3 +32,4 @@ jobs:
           key: ${{ secrets.CPANEL_SSH_KEY }}
           source: "client/build/*"
           target: "/home/taprodev/qa.taprodevpos.com"
+          port: 2222

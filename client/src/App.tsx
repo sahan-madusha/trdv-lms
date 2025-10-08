@@ -7,11 +7,6 @@ import {
   Routes,
 } from "react-router-dom";
 import {
-  LOGIN,
-  LOGIN_SUCCESS,
-} from "./Constant";
-import {
-  LogingSuccessPage,
   SignInPage,
 } from "./Page";
 
@@ -25,8 +20,7 @@ function App() {
             element={
               <>
                 <Routes>
-                  <Route path={LOGIN} element={<SignInPage />} />
-                  <Route path={LOGIN_SUCCESS} element={<LogingSuccessPage />} />
+                  <Route path={"/"} element={<SignInPage />} />
                 </Routes>
               </>
             }
