@@ -1,0 +1,38 @@
+name: Deploy React App to cPanel
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get lates code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          cd client
+          npm install
+
+      - name: Build the React app
+        run: |
+          cd client
+          npm run build
+
+      - name: Copy files to server via SSH
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 135.181.210.49
+          username: taprodev
+          key: b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUxOQAAACDo/eewO+/gFuHpFh7yAu7qt2lu3VydGmknQWuOUnWRqwAAAJg8oJuTPKCbkwAAAAtzc2gtZWQyNTUxOQAAACDo/eewO+/gFuHpFh7yAu7qt2lu3VydGmknQWuOUnWRqwAAAEBf2aSsXANJPQEkhiO3hEBK04EvfId28Yw+VF6nRUtOc+j957A77+AW4ekWHvIC7uq3aW7dXJ0aaSdBa45SdZGrAAAAEWdpdGh1Yi1kZXBsb3kta2V5AQIDBA==
+          source: "client/build/*"
+          target: "/home/taprodev/qa.taprodevpos.com"
