@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { Input, Button, message } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { APPLOGO, IMAGE_URL, LOGIN_SUCCESS, SIGNIN_BG } from "../../Constant";
-import { AuthCheck } from "../../Api";
 import { useAuthChecker } from "../../Context";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
@@ -21,15 +20,15 @@ export const SignInPage = () => {
   const { isLoading: isAuthLoading, refetch } = useQuery({
     queryKey: ["authCheck", formData],
     queryFn: async () => {
-      const res = await AuthCheck(formData);
-      if (res.isAuthDone) {
-        message.success(res.msg);
-        signIn(res);
-        navigate(LOGIN_SUCCESS);
-      } else {
-        message.error(res.msg);
-      }
-      return res;
+      // const res = await AuthCheck(formData);
+      // if (res.isAuthDone) {
+      //   message.success(res.msg);
+      //   signIn(res);
+      //   navigate(LOGIN_SUCCESS);
+      // } else {
+      //   message.error(res.msg);
+      // }
+      return "done";
     },
     enabled: false,
     refetchOnWindowFocus: false,
