@@ -29,6 +29,6 @@ jobs:
         with:
           host: 135.181.210.49
           username: taprodev
-          key: b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUxOQAAACDo/eewO+/gFuHpFh7yAu7qt2lu3VydGmknQWuOUnWRqwAAAJg8oJuTPKCbkwAAAAtzc2gtZWQyNTUxOQAAACDo/eewO+/gFuHpFh7yAu7qt2lu3VydGmknQWuOUnWRqwAAAEBf2aSsXANJPQEkhiO3hEBK04EvfId28Yw+VF6nRUtOc+j957A77+AW4ekWHvIC7uq3aW7dXJ0aaSdBa45SdZGrAAAAEWdpdGh1Yi1kZXBsb3kta2V5AQIDBA==
+          key: ${{ secrets.CPANEL_SSH_KEY }}
           source: "client/build/*"
           target: "/home/taprodev/qa.taprodevpos.com"
