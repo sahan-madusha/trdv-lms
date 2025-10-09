@@ -29,6 +29,6 @@ jobs:
           host: 135.181.210.49
           username: taprodev
           key: ${{ secrets.CPANEL_SSH_KEY }}
-          source: "client/build/*"
+          source: "client/build/**"
           target: "/home/taprodev/qa.taprodevpos.com"
           port: 26742
