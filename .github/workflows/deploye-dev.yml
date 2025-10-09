@@ -3,11 +3,11 @@ name: Deploy React App to cPanel
 on:
   push:
     branches:
-      - qa
+      - dev
   pull_request:
     types: [opened, synchronize, reopened]
     branches-ignore:
-      - qa
+      - dev
 
 jobs:
   build-and-deploy:
