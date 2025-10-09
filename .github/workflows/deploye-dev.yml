@@ -26,9 +26,11 @@ jobs:
       - name: Copy files to server via SSH
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: 135.181.210.49
+          server: server.hglk.link           # Your FTP host (check in cPanel)
           username: taprodev
-          key: ${{ secrets.CPANEL_SSH_KEY }}
-          source: "client/build/*"
-          target: "/home/taprodev/qa.taprodevpos.com"
-          port: 2222
+          password: sxTqoE|QhTzq
+          local-dir: client/build
+          server-dir: /home/taprodev/qa.taprodevpos.com/
+          protocol: ftps                        # use 'ftp' if your host doesn’t support FTPS
+          port: 21
+          log-level: standard
