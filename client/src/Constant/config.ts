@@ -1,4 +1,6 @@
-const env = process.env.REACT_APP_APP_ENV;
+// ENV:localhost/development/production
+
+const env = "development";
 const commonConfig = {
   webName: "edsy.lk",
   address: "No.125/ B, aladeniya, Sri lanka.",
