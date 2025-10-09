@@ -23,7 +23,7 @@ jobs:
           cd client
           npm run build
 
-      - name: Copy files to server via SSH
+      - name: Copy files to server via FTPs
         uses: appleboy/scp-action@v0.1.7
         with:
           server: server.hglk.link           # Your FTP host (check in cPanel)
