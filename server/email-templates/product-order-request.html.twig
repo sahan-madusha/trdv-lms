@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Product Order Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h2 {
+            color: #0056b3;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .details {
+            background: #f9f9f9;
+            padding: 10px;
+            border-left: 5px solid #0056b3;
+            margin-top: 15px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Product Order Request</h2>
+        <p>Dear warehouse manager,</p>
+        
+        <p>This is a formal request from <strong>{{ agency_name }}</strong> to place an order for the following products:</p>
+        
+        <div class="details">
+            <p><strong>Order ID:</strong> {{ order_id }}</p>
+            <p><strong>Product List:</strong></p>
+            <ul>
+                {% for product in products %}
+                    <li>{{ product.name }} - {{ product.quantity }} units</li>
+                {% endfor %}
+            </ul>
+            <p><strong>Note : </strong> {{ note }}</p>
+        </div>
+
+        <p>We kindly request you to confirm the order and share any necessary details regarding delivery and payment.</p>
+
+        <p>Looking forward to your response.</p>
+
+        <p>Best Regards,<br>
+        {{ agency_name }}<br>
+        {{ agency_email }}
+        {{ agency_Address }}<br>
+        {{ agency_contact }}<br></p>
+
+        <div class="footer">
+            <p>This email is generated automatically. If you have any questions, please contact {{ sender_email }}.</p>
+        </div>
+    </div>
+</body>
+</html>
