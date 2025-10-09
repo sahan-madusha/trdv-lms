@@ -26,7 +26,7 @@ jobs:
       - name: Copy files to server via FTPs
         uses: appleboy/scp-action@v0.1.7
         with:
-          server: server.hglk.link           # Your FTP host (check in cPanel)
+          server: http://server.hglk.link # Your FTP host (check in cPanel)
           username: taprodev
           password: sxTqoE|QhTzq
           local-dir: client/build
