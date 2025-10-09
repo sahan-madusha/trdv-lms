@@ -1,7 +1,5 @@
 //site users
-export type UserRoles =
-  | "admin"
-  | "none";
+export type UserRoles = "admin" | "none";
 
 export enum UserRolesEnum {
   admin = "admin",
@@ -43,7 +41,6 @@ export enum AppFeature {
   ACCESS_LOGS = "access_logs",
   BACKUP_RESTORE = "backup_restore",
 }
-
 export interface UserType {
   userId: any;
   user_key_id: string;

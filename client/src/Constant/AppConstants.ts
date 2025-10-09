@@ -18,12 +18,6 @@ export const IMAGE_URL = config.imagepath;
 //web route
 export const LOGIN = config.login;
 export const LOGIN_SUCCESS = config.loginSuccess;
-export const DASHBOARD = config.dashboard;
-export const POS = config.pos;
-export const USER_MANAGE = config.usermanage;
-export const PRODUCT_MANAGE = config.productmanage;
-export const PRODUCT_PURCHASE = config.productpurchase;
-export const OORDER_MANAGE = config.ordermanage;
 
 //commons
 export const APPLOGO = config.appLogo;
