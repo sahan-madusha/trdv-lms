@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.CPANEL_UNAME }}
           key: ${{ secrets.CPANEL_SSH_KEY }}
           source: "client/build/**"
-          target: "/home/${{ secrets.CPANEL_UNAME }}/qa.taprodevpos.com/"
+          target: "/home/${{ secrets.CPANEL_UNAME }}/qa.taprodevpos.com/server/"
           port: ${{ secrets.CPANEL_PORT }}
           strip_components: 2
         
@@ -41,6 +41,5 @@ jobs:
           username: ${{ secrets.CPANEL_UNAME }}
           key: ${{ secrets.CPANEL_SSH_KEY }}
           source: "server/**"
-          target: "/home/${{ secrets.CPANEL_SERVER }}/qa.taprodevpos.com/server/"
-          port: ${{ secrets.CPANEL_PORT }}
+          target: "/home/${{ secrets.CPANEL_UNAME }}/qa.taprodevpos.com/server/"          port: ${{ secrets.CPANEL_PORT }}
           strip_components: 1
