@@ -45,14 +45,14 @@ jobs:
           port: ${{ secrets.CPANEL_PORT }}
           strip_components: 1
 
-      - name: Deploying Images ...
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.CPANEL_SERVER }}
-          username: ${{ secrets.CPANEL_UNAME }}
-          key: ${{ secrets.CPANEL_SSH_KEY }}
-          source: "images/**"
-          target: "/home/${{ secrets.CPANEL_UNAME }}/qa.taprodevpos.com/images/"
-          port: ${{ secrets.CPANEL_PORT }}
-          strip_components: 1
+      # - name: Deploying Images ...
+      #   uses: appleboy/scp-action@v0.1.7
+      #   with:
+      #     host: ${{ secrets.CPANEL_SERVER }}
+      #     username: ${{ secrets.CPANEL_UNAME }}
+      #     key: ${{ secrets.CPANEL_SSH_KEY }}
+      #     source: "images/**"
+      #     target: "/home/${{ secrets.CPANEL_UNAME }}/qa.taprodevpos.com/images/"
+      #     port: ${{ secrets.CPANEL_PORT }}
+      #     strip_components: 1
 
