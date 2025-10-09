@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.CPANEL_UNAME }}
           key: ${{ secrets.CPANEL_SSH_KEY }}
           source: "client/build/**"
-          target: "/home/${{ secrets.CPANEL_UNAME }}/qa.taprodevpos.com/server/"
+          target: "/home/${{ secrets.CPANEL_UNAME }}/qa.taprodevpos.com/"
           port: ${{ secrets.CPANEL_PORT }}
           strip_components: 2
 
