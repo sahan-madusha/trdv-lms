@@ -23,14 +23,12 @@ jobs:
           cd client
           npm run build
 
-      - name: Copy files to server via FTPs
+      - name: Copy files to server via SSH
         uses: appleboy/scp-action@v0.1.7
         with:
-          server: http://server.hglk.link # Your FTP host (check in cPanel)
+          host: 135.181.210.49
           username: taprodev
-          password: sxTqoE|QhTzq
-          local-dir: client/build
-          server-dir: /home/taprodev/qa.taprodevpos.com/
-          protocol: ftps                        # use 'ftp' if your host doesn’t support FTPS
-          port: 21
-          log-level: standard
+          key: ${{ secrets.CPANEL_SSH_KEY }}
+          source: "client/build/*"
+          target: "/home/taprodev/qa.taprodevpos.com"
+          port: 26742
