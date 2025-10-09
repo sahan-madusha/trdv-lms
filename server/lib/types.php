@@ -2,7 +2,6 @@
 class UserRole
 {
     public const ADMIN = 'admin';
-
     public const NONE = 'none';
 }
 
