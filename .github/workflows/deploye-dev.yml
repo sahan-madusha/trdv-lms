@@ -33,3 +33,14 @@ jobs:
           target: "/home/taprodev/qa.taprodevpos.com/"
           port: 26742
           strip_components: 2
+        
+      - name: Copy backend (server folder) to server via SSH
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: 135.181.210.49
+          username: taprodev
+          key: ${{ secrets.CPANEL_SSH_KEY }}
+          source: "server/**"
+          target: "/home/taprodev/qa.taprodevpos.com/server/"
+          port: 26742
+          strip_components: 1
