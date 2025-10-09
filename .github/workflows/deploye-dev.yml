@@ -23,12 +23,13 @@ jobs:
           cd client
           npm run build
 
-      - name: Copy files to server via SSH
+      - name: Copy build contents to server via SSH
         uses: appleboy/scp-action@v0.1.7
         with:
           host: 135.181.210.49
           username: taprodev
           key: ${{ secrets.CPANEL_SSH_KEY }}
           source: "client/build/**"
-          target: "/home/taprodev/qa.taprodevpos.com"
+          target: "/home/taprodev/qa.taprodevpos.com/"
           port: 26742
+          strip_components: 2
