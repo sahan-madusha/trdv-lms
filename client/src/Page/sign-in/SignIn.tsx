@@ -1,18 +1,19 @@
 import React, { useRef, useState } from "react";
-import { Input, Button } from "antd";
+import { Input, Button, message } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import { APPLOGO, IMAGE_URL, SIGNIN_BG } from "../../Constant";
-// import { useAuthChecker } from "../../Context";
-// import { useNavigate } from "react-router-dom";
+import { APPLOGO, IMAGE_URL, LOGIN_SUCCESS, SIGNIN_BG } from "../../Constant";
+import { useAuthChecker } from "../../Context";
+import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import { AuthCheck } from "../../Api";
 
 export const SignInPage = () => {
   const passwordRef = useRef(null);
   const loginBtnRef = useRef(null);
   const [formData, setFormData] = useState({ username: "", password: "" });
-  // const { signIn } = useAuthChecker();
-  // const navigate = useNavigate();
+  const { signIn } = useAuthChecker();
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,19 +22,19 @@ export const SignInPage = () => {
   const { isLoading: isAuthLoading, refetch } = useQuery({
     queryKey: ["authCheck", formData],
     queryFn: async () => {
-      const res = "";
-      // const res = await AuthCheck(formData);
-      // if (res.isAuthDone) {
-      //   message.success(res.msg);
-      //   signIn(res);
-      //   navigate(LOGIN_SUCCESS);
-      // } else {
-      //   message.error(res.msg);
-      // }
+      const res = await AuthCheck(formData);
+      if (res.isAuthDone) {
+        message.success(res.msg);
+        signIn(res);
+        navigate(LOGIN_SUCCESS);
+      } else {
+        message.error(res.msg);
+      }
       return res;
     },
     enabled: false,
     refetchOnWindowFocus: false,
+    retry: false,
   });
 
   return (

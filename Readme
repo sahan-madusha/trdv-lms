@@ -341,11 +341,11 @@ class Database {
     public static function setUpConnection() {
         if (!isset(Database::$connection)) {
             Database::$connection = new mysqli(
-                "server123.hostingprovider.com", // Hostname
-                "qa_trdv_lms",                   // Username
-                "s&.)N}S",                       // Password
-                "qa_trdv_lms",                   // Database
-                3306                             // Port
+                "server123.hostingprovider.com",
+                "qa_ms",                  
+                "s&.)N}S",                      
+                "qa_lms",                  
+                3306                            
             );
 
             if (Database::$connection->connect_error) {
@@ -404,3 +404,21 @@ If your hosting provider blocks direct MySQL connections, use HeidiSQL’s **SSH
 
 **Author:** Your Name
 **Last Updated:** October 2025
+
+
+=======================================================================
+
+**BACKEND**
+
+# Install following composors
+composer require vlucas/phpdotenv
+composer require phpmailer/phpmailer
+composer require twig/twig
+
+
+
+=======================================================================
+
+**API**
+
+Link : \https://grey-trinity-393827.postman.co/workspace/My-Workspace~56ed7c61-e132-4a60-823b-60462695df1c/collection/25049258-94b6c069-e4b0-4a45-9e48-2df3dc29fcc6?action=share&source=copy-link&creator=25049258
