@@ -23,24 +23,24 @@ jobs:
           cd client
           npm run build
 
-      - name: Copy build contents to server via SSH
+      - name: Deploying Frontend...
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: 135.181.210.49
-          username: taprodev
+          host: ${{ secrets.CPANEL_SERVER }}
+          username: ${{ secrets.CPANEL_UNAME }}
           key: ${{ secrets.CPANEL_SSH_KEY }}
           source: "client/build/**"
-          target: "/home/taprodev/qa.taprodevpos.com/"
-          port: 26742
+          target: "/home/${{ secrets.CPANEL_UNAME }}/qa.taprodevpos.com/"
+          port: ${{ secrets.CPANEL_PORT }}
           strip_components: 2
         
-      - name: Copy backend (server folder) to server via SSH
+      - name: Deploying Backend ...
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: 135.181.210.49
-          username: taprodev
+          host: ${{ secrets.CPANEL_SERVER }}
+          username: ${{ secrets.CPANEL_UNAME }}
           key: ${{ secrets.CPANEL_SSH_KEY }}
           source: "server/**"
-          target: "/home/taprodev/qa.taprodevpos.com/server/"
-          port: 26742
+          target: "/home/${{ secrets.CPANEL_SERVER }}/qa.taprodevpos.com/server/"
+          port: ${{ secrets.CPANEL_PORT }}
           strip_components: 1
