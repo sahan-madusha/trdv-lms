@@ -1,7 +1,7 @@
 export const SignInPage = () => {
   return (
     <div className="flex min-h-screen">
-      Deployement testing
+      Deployement testing success
     </div>
   );
 };
